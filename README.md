@@ -1,61 +1,62 @@
 # FinLake — Metadata-Driven Banking Lakehouse
 
-An end-to-end banking data engineering platform built using Databricks Free Edition.
+> An end-to-end banking data platform built with Databricks, PySpark, Delta Lake, Unity Catalog, Auto Loader, CDC, SCD Type 2, data quality monitoring, and Databricks AI/BI.
 
-## Objective
+![FinLake Architecture]![complete workflow](<screenshots/architecture/complete workflow.png>)
 
-FinLake simulates a modern banking data platform that ingests data from multiple operational domains, processes it through a Medallion Architecture, applies automated data-quality controls, maintains historical customer changes, and produces analytical data products for banking operations.
 
-## Technology Stack
+---
 
-- Databricks Free Edition
-- PySpark
-- Spark SQL
-- Delta Lake
-- Unity Catalog
-- Auto Loader
-- Databricks Jobs
-- Databricks SQL
-- Python
-- Git/GitHub
+## 📌 Overview
 
-## Architecture
-![complete workflow](<screenshots/architecture/complete workflow.png>)
-Source Systems
-→ Incremental Ingestion
-→ Bronze
-→ Data Quality
-→ Silver
-→ Gold
-→ Databricks SQL
-→ Dashboards
+**FinLake** is a metadata-driven banking lakehouse designed to demonstrate production-style data engineering concepts using Databricks.
 
-## Data Domains
-
-- Customers
-- Accounts
-- Transactions
-- Cards
-- Loans
-- Payments
-- Customer Events
-
-## Key Engineering Capabilities
+The platform processes synthetic banking data through a complete **Bronze → Silver → Gold** architecture and includes:
 
 - Metadata-driven ingestion
 - Incremental processing
-- Medallion Architecture
+- Auto Loader
 - Delta Lake
-- Data-quality framework
+- Unity Catalog
+- Data quality validation
 - Data quarantine
-- Deduplication
-- CDC processing
+- Customer CDC
 - SCD Type 2
-- Idempotent pipelines
-- Star-schema modeling
-- Customer 360
-- Fraud analytics
-- Pipeline auditing
-- Monitoring
-- Performance optimization
-- Databricks workflow orchestration
+- Idempotent processing
+- Star schema modeling
+- Business analytics
+- Databricks Jobs orchestration
+- Pipeline monitoring
+- Databricks Lakeflow system tables
+- Databricks AI/BI dashboard
+
+The project was developed using **Databricks Free Edition**, local Python, and GitHub without requiring paid cloud infrastructure.
+
+---
+
+# 🏗️ Architecture
+
+```text
+Synthetic Banking Data
+        ↓
+Databricks Volume
+        ↓
+     BRONZE
+        ↓
+     SILVER
+        ↓
+Data Quality
+   ↙          ↘
+Valid       Quarantine
+   ↓
+Customer CDC
+   ↓
+Customer SCD2
+   ↓
+     GOLD
+   ↓
+Business Marts
+   ↓
+Monitoring
+   ↓
+Databricks AI/BI Dashboard
