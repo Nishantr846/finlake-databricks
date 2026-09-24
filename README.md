@@ -20,7 +20,7 @@ FinLake simulates a modern banking data platform that ingests data from multiple
 - Git/GitHub
 
 ## Architecture
-
+![complete workflow](<screenshots/architecture/complete workflow.png>)
 Source Systems
 → Incremental Ingestion
 → Bronze
