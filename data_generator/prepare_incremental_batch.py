@@ -177,7 +177,7 @@ new_accounts = accounts.iloc[:new_account_count].copy()
 new_accounts["account_id"] = new_account_ids
 
 # Use existing customers as valid foreign keys
-customer_ids = accounts["customer_id"].dropna().unique()
+customer_ids = current["customer_id"].dropna().unique()
 
 new_accounts["customer_id"] = rng.choice(
     customer_ids,

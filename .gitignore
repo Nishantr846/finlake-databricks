@@ -1,9 +1,28 @@
-.DS_Store
-
-# Python virtual environments and generated files
+# Python
 .venv/
 __pycache__/
 *.py[cod]
 
 # Generated data
 data/
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.*
+
+# Databricks
+.databricks/
+
+# OS / temporary
+*.log
+*.tmp
